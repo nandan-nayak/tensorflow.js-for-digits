@@ -1,0 +1,948 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'api/css/w3.css' %}">
+<link rel="stylesheet" href="{% static 'api/css/font-awesome.min.css' %}">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Django web project</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="{% static 'api/css/latin,cyrillic-ext.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'api/css/Material+Icons.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{% static 'api/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{% static 'api/css/waves.css' %}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{% static 'api/css/animate.css' %}" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="{% static 'api/css/bootstrapstyle.css' %}" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="{% static 'api/css/all-themes.css' %}" rel="stylesheet" />
+</head>
+<style>
+  .bottom-three {
+     margin-right: 3cm;
+  }
+  .divleft {
+    float: left;
+}
+ .divright {
+    float: left;
+}
+.video1 {
+	margin: 0 auto;
+	border: 10px outset #ddd;
+	width=50;
+}
+.wrapper {
+    text-align: center;
+}
+#ABC {
+      background-color: #B3DFF9;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+}
+
+</style>
+
+
+<body class="theme-red ls-opened" >
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+   
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+   <nav class="navbar">
+        <div class="container-fluid">
+            
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">11</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+								 <li>
+                                        <a href="javascript:void(0);" onclick="alert('two operands are choosen based on prediction result obtained for the images on particular operand');">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">report</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>introduction notification</h4>
+                                                 <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+									<li>
+                                        <a href="javascript:void(0);" onclick="alert(' digit which got maximum prediction value is the value for that operand');">
+                                            <div class="icon-circle bg-yellow">
+                                                <i class="material-icons">insert_chart</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>operand notification</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+									<li>
+                                        <a href="javascript:void(0);" onclick="alert(' result will be calculated after operands values and operators are choosen ');">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">thumb_up</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>result notification</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="alert('you can either choose image as file or you can capture from camera');">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">videocam</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>choosing method notification </h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+									<li>
+                                        <a href="javascript:void(0);"  onclick="alert('image for prediction are available in location static/api/images');">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">photo_size_select_actual</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>image location notification</h4>
+                                                 <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="alert('image should contain only one digit');">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">image</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>image constraint notification </h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="alert('color of digit should be either black or white');">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">image</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4> image constraint(2) notification </h4>
+                                                 <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="alert('background color should be inverse of color of the digit');">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">image</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>image constraint(3) notification</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="alert('click on the TAKE PICTURE button to capture images for particular operands');">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">camera_alt</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>image capture notification </h4>
+                                                 <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+									<li>
+                                        <a href="javascript:void(0);" onclick="alert('after taking image click on tbe predict button for particular operands');">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">insert_chart</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>predict  notification </h4>
+                                                 <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);"  onclick="alert('original image and processed image is resized and shown with background black and foreground white');">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">photo_size_select_actual</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>image processing notification</h4>
+                                                 <p>
+                                                    <i class="material-icons">access_time</i> 10-12-2018
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    
+                    <!-- #END# Tasks -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+
+    
+    <br><br><br>
+	<center>
+
+			   <p><video id="video" autoplay="autoplay" style="margin: 0 auto;border:10px solid #800080; height=10;width=10;"></video></p>
+
+    
+<div class="row" style="width:1000px; margin:10 auto;">
+<p>
+
+</p>
+<p>
+<div class="col-lg-2 col-lg col-md-4 col-md col-sm-offset-3 col-xs-2">
+<button type="button" class="btn bg-teal btn-block btn-lg waves-effect" id="buttonstart" value="Start" onclick="start()">start</button></div></p>
+<p>
+<br>
+</p>
+
+</center>
+<img src="{% static 'api/white.jpg' %} " style="display:None;" id="whiteimage"> </div>
+
+<br>
+
+
+<div class="row clearfix" >
+
+                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card" style=" background-color: #B3DFF9;">
+                        <div class="header">
+                            <h2>
+                              operand 1
+                            </h2>
+                           
+                        </div>
+                       <div class="body" >	
+					   <button type="button" id="buttonSnap1" value="Take picture" class="btn bg-teal btn-block btn-lg waves-effect" onclick="snapshot1()">take picture</button>
+					   <br><br>
+					   <img style="display:None" height="28" width='28' id="hiddenimage1"/>
+<input type="file" id="fileInput1" name="file" />
+	resized original image
+	 						<canvas id="canvas" width="28" height="28"></canvas>
+						<br>
+						
+						<br>
+						resized processed image
+						<canvas id="canvas01" width="28" height="28"></canvas><br><br><div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<button type="button" class="btn bg-teal btn-block btn-lg waves-effect" onclick="predict1()">predict</button></div><br><br><br>
+
+                   
+						<div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+
+                        
+                </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card" style=" background-color: #B3DFF9;">
+                        <div class="header">
+                            <h2>
+                              result
+                            </h2>
+                           
+                        </div>
+                        
+						                        <div class="body ">	
+												choose operator
+							<select id="selectfield"> 
+  <option value="+" selected="selected">+</option>
+  <option value="-" >-</option>
+  <option value="/">/</option>
+    <option value="*">*</option>
+
+</select>
+												
+												<br><br><div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+	<button type="button" class="btn bg-teal btn-block btn-lg waves-effect" onclick="result()">result</button></div><br><br><br>
+
+						<div class="row">
+                <div class="row-lg-3 row-md-3 row-sm-6 row-xs-2">
+                    <div class="info-box-4">
+                        <div class="icon">
+                           <h1> <div class="number count-to" id="result" data-from="0"  data-speed="1500" data-fresh-interval="20"></div></h1>
+                        </div>
+                        <div class="content">
+                           <h1> <div class="text">RESULT IS :</div></h1>
+                           
+                        </div>
+                    </div>
+                </div></div>
+						
+						
+	
+	</div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card" style=" background-color: #B3DFF9;">
+                        <div class="header">
+                            <h2>
+operand 2
+                            </h2>
+                          
+                        </div>
+                        <div class="body ">	
+						<button type="button" id="buttonSnap2" value="Take picture" class="btn bg-teal btn-block btn-lg waves-effect" onclick="snapshot2()">take picture</button>
+					   <br><br>
+						<img id="hiddenimage2"  style="display:None" height="28" width="28"/>
+						<input type="file" id="fileInput2" name="file" /><br>
+	 resized real image 
+						<canvas id="canvas1" width="28" height="28"></canvas>
+						<br>
+						resized processed image
+						<canvas id="canvas11" width="28" height="28"></canvas><br><br><div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<button type="button" class="btn bg-teal btn-block btn-lg waves-effect" onclick="predict2()">predict</button></div><br><br><br>
+
+<div id="chartContainer2" style="height: 500px; width: 100%;"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+                    </div>
+               
+
+
+			   
+			   
+			   
+			   
+    <!-- Jquery Core Js -->
+	<script src="{% static 'api/js/canvasjs.min.js' %}"></script>
+    <script src="{% static 'api/js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{% static 'api/js/bootstrap.js' %}"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{% static 'api/js/bootstrap-select.js' %}"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{% static 'api/js/jquery.slimscroll.js' %}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{% static 'api/js/waves.js' %}"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="{% static 'api/js/jquery.countTo.js' %}"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="{% static 'api/js/jquery.sparkline.js' %}"></script>
+
+    <!-- Custom Js -->
+    <script src="{% static 'api/bootstrapjs/admin.js' %}"></script>
+    <script src="{% static 'api/bootstrapjs/helpers.js' %}"></script>
+    <script src="{% static 'api/js/infobox-5.js' %}"></script>
+
+<script src="{% static 'api/js/tfjs@0.12.5.js'%}"> </script>
+	<script src="{% static 'api/js/opencv.js'%}" type="text/javascript" charset="utf-8"></script>
+<script>
+  async function init() {
+    var path = "{% static "api/saved/model.json" %}";
+    console.log(path);
+         model = await tf.loadModel(path);
+        console.log("model loaded");
+    }
+
+    init();
+</script>
+	
+    <!-- Demo Js -->
+    <script src="{% static 'api/bootstrapjs/demo.js' %}"></script>
+	<script>
+	
+	
+let imgElement1 = document.getElementById('hiddenimage1');
+let inputElement1 = document.getElementById('fileInput1');
+ let imgElement2 = document.getElementById('hiddenimage2');
+let inputElement2 = document.getElementById('fileInput2');
+let gray1=new cv.Mat();
+var picturetaken1="";
+var picturetaken2="";
+inputElement1.addEventListener('change', (e) => {
+  imgElement1.src = URL.createObjectURL(e.target.files[0]);
+}, false);
+ 
+imgElement1.onload = function() {
+ let mat=cv.imread('hiddenimage1');
+ picturetaken1="nottaken";
+  cv.imshow('canvas', mat);
+  mat.delete();
+ 
+
+};
+inputElement2.addEventListener('change', (e) => {
+imgElement2.src = URL.createObjectURL(e.target.files[0]);
+}, false);
+imgElement2.onload = function() {
+picturetaken2="nottaken";
+ let mat=cv.imread('hiddenimage2');
+  cv.imshow('canvas1', mat);
+  mat.delete();
+ 
+
+};
+
+
+	
+	
+	var result1="";
+	var result2="";
+	var control=1;
+	var video = document.getElementById('video');
+
+let rgb1=new cv.Mat();
+  
+   let srcresize1=new cv.Mat();
+   let rgb2=new cv.Mat();
+   let gray2 =new cv.Mat();
+var videoStream = null;
+var preLog = document.getElementById('preLog');
+var show=document.getElementById("canvas01");
+var show1=document.getElementById("canvas11");
+let reimg1=new cv.Mat();let reimg2=new cv.Mat();
+
+
+	  function snapshot1()
+{
+
+var canvas = document.getElementById('canvas');
+var canvas01=document.getElementById("canvas01");
+canvas.height = video.videoHeight;
+	picturetaken1="taken";
+	canvas.width = video.videoWidth;
+	canvas.getContext('2d').drawImage(video, 0, 0);
+	let canvassrc=cv.imread("canvas");
+let canvasdst=new cv.Mat();
+let dsize=new cv.Size(28,28);
+cv.resize(canvassrc,canvasdst,dsize,0,0,cv.INTER_AREA);
+cv.imshow('canvas',canvasdst);
+	
+	
+
+ 
+
+
+//predict1();
+}
+function snapshot2()
+
+{
+//alert(control);
+picturetaken2="taken";
+	var canvas1=document.getElementById("canvas1");
+canvas1.width=video.videoWidth;
+canvas1.height=video.videoHeight;
+canvas1.getContext("2d").drawImage(video,0,0);
+let src=cv.imread("canvas1");
+let dst=new cv.Mat();
+
+let dsize=new cv.Size(28,28);
+cv.resize(src,dst,dsize,0,0,cv.INTER_AREA);
+cv.imshow('canvas1',dst);
+//cv.imshow('canvas11',dst);
+//predict2();
+}
+
+
+
+	function noStream()
+{
+	log('Access to camera was denied!');
+}
+
+
+
+
+
+function stop()
+{
+	var myButton = document.getElementById('buttonStop');
+	if (myButton) myButton.disabled = true;
+	myButton1 = document.getElementById('buttonSnap1');
+	if (myButton1) myButton1.disabled = true;
+	myButton1 = document.getElementById('buttonSnap2');
+	if (myButton1) myButton1.disabled = true;
+	if (videoStream)
+	{
+		if (videoStream.stop) videoStream.stop();
+		else if (videoStream.msStop) videoStream.msStop();
+		videoStream.onended = null;
+		videoStream = null;
+	}
+	if (video)
+	{
+		video.onerror = null;
+		video.pause();
+		if (video.mozSrcObject)
+			video.mozSrcObject = null;
+		video.src = "";
+	}
+	myButton = document.getElementById('buttonStart');
+	if (myButton) myButton.disabled = false;
+}
+
+function gotStream(stream)
+{
+	var myButton = document.getElementById('buttonStart');
+	if (myButton) myButton.disabled = true;
+	videoStream = stream;
+	log('Got stream.');
+	video.onerror = function ()
+	{
+		log('video.onerror');
+		if (video) stop();
+	};
+	stream.onended = noStream;
+	if (window.webkitURL) video.src = window.webkitURL.createObjectURL(stream);
+	else if (video.mozSrcObject !== undefined)
+	{//FF18a
+		video.mozSrcObject = stream;
+		video.play();
+	}
+	else if (navigator.mozGetUserMedia)
+	{//FF16a, 17a
+		video.src = stream;
+		video.play();
+	}
+	else if (window.URL) video.src = window.URL.createObjectURL(stream);
+	else video.src = stream;
+	myButton = document.getElementById('buttonSnap');
+	if (myButton) myButton.disabled = false;
+	myButton = document.getElementById('buttonStop');
+	if (myButton) myButton.disabled = false;
+}
+
+function start()
+{
+const constraints = {
+  video: true
+};
+
+const video = document.querySelector('video');
+
+navigator.mediaDevices.getUserMedia(constraints).
+  then((stream) => {video.srcObject = stream});
+myButton1 = document.getElementById('buttonSnap1');
+	if (myButton1) myButton1.disabled = false;
+	myButton1 = document.getElementById('buttonSnap2');
+	if (myButton1) myButton1.disabled = false;
+	if ((typeof window === 'undefined') || (typeof navigator === 'undefined')) log('This page needs a Web browser with the objects window.* and navigator.*!');
+	else if (!(video && canvas)) log('HTML context error!');
+	else
+	{
+		log('Get user media…');
+		
+		if (navigator.getUserMedia) navigator.getUserMedia({video:true}, gotStream, noStream);
+		else if (navigator.oGetUserMedia) navigator.oGetUserMedia({video:true}, gotStream, noStream);
+		else if (navigator.mozGetUserMedia) navigator.mozGetUserMedia({video:true}, gotStream, noStream);
+		else if (navigator.webkitGetUserMedia) navigator.webkitGetUserMedia({video:true}, gotStream, noStream);
+		else if (navigator.msGetUserMedia) navigator.msGetUserMedia({video:true, audio:false}, gotStream, noStream);
+		else log('getUserMedia() not available from your Web browser!');
+	}
+}
+
+
+	  
+	  
+function log(text)
+{
+	if (preLog) preLog.textContent += ('\n' + text);
+	else alert(text);
+}
+
+function predict1()
+{
+if(picturetaken1=="")
+{
+alert("capture picture or choose image");}
+else{
+//document.getElementById("left0").setAttribute("data-to","100");
+
+let dsize=new cv.Size(28,28);
+
+let dst=new cv.Mat();
+let imagecv=cv.imread("canvas");
+
+cv.resize(imagecv,reimg1,dsize,0,0,cv.INTER_AREA);
+let mask=new cv.Mat();
+
+	
+	
+//cv.cvtColor(reimg1,reimg1,cv.COLOR_RGB2GRAY);
+
+var white=0;
+var black=0;
+for (let i = 0; i < reimg1.rows; i++) {
+    for (let j = 0; j < reimg1.cols; j++) {
+	if(reimg1.ucharPtr(i,j)[0]>100) white=white+1;
+	else black=black+1;
+    if(reimg1.ucharPtr(i,j)[1]>100)white=white+1;
+	else black=black+1;
+		 if(reimg1.ucharPtr(i,j)[2]>100)white=white+1;
+	else black=black+1;
+	
+   }
+}
+//alert("white"+white);
+//alert("black"+black);
+if(white>black)
+{
+
+for (let i = 0; i < reimg1.rows; i++) {
+    for (let j = 0; j < reimg1.cols; j++) {
+	if(reimg1.ucharPtr(i,j)[0]>100) reimg1.ucharPtr(i, j)[0] = 0;
+	else reimg1.ucharPtr(i, j)[0] = 255;
+    if(reimg1.ucharPtr(i,j)[1]>100)reimg1.ucharPtr(i, j)[1] = 0;   
+	else reimg1.ucharPtr(i, j)[1] = 255;
+		 if(reimg1.ucharPtr(i,j)[2]>100)reimg1.ucharPtr(i, j)[2] = 0;   
+	else reimg1.ucharPtr(i, j)[2] = 255;
+	
+   }
+}
+cv.cvtColor(reimg1,gray1,cv.COLOR_RGB2GRAY);
+
+cv.imshow("canvas01",gray1);
+
+
+}
+else
+{
+cv.cvtColor(cv.imread("canvas"),gray1,cv.COLOR_RGB2GRAY);
+
+cv.imshow("canvas01",gray1);
+}
+//alert("picture not taken");
+var imagedata=document.getElementById("canvas01");
+//let img22Data=cv.imread('image1');
+var i=imagedata.getContext("2d").getImageData(0,0,28,28);
+//cv.imshow("canvas01",sub5);
+//alert(sub5.data);
+//show.getContext('2d').putImageData(img22Data, 0, 0);
+
+
+
+var tfImg = tf.fromPixels(i, 1);
+   //console.log(tfImg.shape);
+   //Resize the image
+  
+ var smalImg = tf.image.resizeBilinear(tfImg, [28, 28]).reshape([1,28,28]);
+   //alert(imageData.data);
+   
+   smalImg = tf.cast(smalImg, 'float32');
+   var tensor = smalImg.expandDims(0);
+   tensor = tensor.div(tf.scalar(255));
+    
+   //tensor.append(null);
+    const prediction = model.predict(tensor);
+    const predictedValues = prediction.dataSync();
+    best = predictedValues[0];
+    best_index = 0;
+	
+	
+	
+	var dps=[];
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "PREDICTION FOR OPERAND 1"
+	},
+	axisY: {
+		title: " predicted percentage for digits",
+		suffix: "%",
+		includeZero: false
+	},
+	axisX: {
+		title: "digits"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints:dps
+	}]
+});
+	
+	
+	
+	var xVal = 0;
+var yVal = 0; 
+	
+	
+	
+	
+	
+	
+	
+     for (index = 0; index < predictedValues.length; index++) {
+      if ( predictedValues[index] > best ) { best_index = index; best=predictedValues[index];}
+      x  = Math.round(predictedValues[index]*100);
+	 
+
+		
+		dps.push({
+			x: index,
+			y: x
+		});
+		
+	
+
+	 
+	 
+	
+           
+    }   
+	chart.render();
+    console.log(best_index);
+	//alert(best_index);
+	result1=best_index;
+    
+}
+}
+function predict2()
+{
+if(picturetaken2=="")
+{
+alert("capture picture or choose file");
+}
+else{
+let dsize1=new cv.Size(28,28);
+
+let dst1=new cv.Mat();
+let imagecv1=cv.imread("canvas1");
+let reimg1=new cv.Mat();
+cv.resize(imagecv1,reimg1,dsize1,0,0,cv.INTER_AREA);
+
+
+var white=0;
+var black=0;
+for (let i = 0; i < reimg1.rows; i++) {
+    for (let j = 0; j < reimg1.cols; j++) {
+	if(reimg1.ucharPtr(i,j)[0]>100) white=white+1;
+	else black=black+1;
+    if(reimg1.ucharPtr(i,j)[1]>100)white=white+1;
+	else black=black+1;
+		 if(reimg1.ucharPtr(i,j)[2]>100)white=white+1;
+	else black=black+1;
+	
+   }
+}
+if(white>black)
+{
+
+for (let i = 0; i < reimg1.rows; i++) {
+    for (let j = 0; j < reimg1.cols; j++) {
+	if(reimg1.ucharPtr(i,j)[0]>100) reimg1.ucharPtr(i, j)[0] = 0;
+	else reimg1.ucharPtr(i, j)[0] = 255;
+    if(reimg1.ucharPtr(i,j)[1]>100)reimg1.ucharPtr(i, j)[1] = 0;   
+	else reimg1.ucharPtr(i, j)[1] = 255;
+		 if(reimg1.ucharPtr(i,j)[2]>100)reimg1.ucharPtr(i, j)[2] = 0;   
+	else reimg1.ucharPtr(i, j)[2] = 255;
+	
+   }
+}
+cv.cvtColor(reimg1,gray1,cv.COLOR_RGB2GRAY);
+
+cv.imshow("canvas11",gray1);
+
+
+}
+else
+{
+cv.cvtColor(cv.imread("canvas1"),gray1,cv.COLOR_RGB2GRAY);
+
+cv.imshow("canvas11",gray1);
+}
+
+
+//alert("picture not taken");
+var imagedata1=document.getElementById("canvas11");
+//let img22Data=cv.imread('image1');
+var i1=imagedata1.getContext("2d").getImageData(0,0,28,28);
+
+
+var tfImg1 = tf.fromPixels(i1, 1);
+   //console.log(tfImg.shape);
+   //Resize the image
+  
+ var smalImg1 = tf.image.resizeBilinear(tfImg1, [28, 28]).reshape([1,28,28]);
+   //alert(imageData.data);
+   
+   smalImg1 = tf.cast(smalImg1, 'float32');
+   var tensor1 = smalImg1.expandDims(0);
+   tensor1 = tensor1.div(tf.scalar(255));
+    
+   //tensor.append(null);
+    const prediction1 = model.predict(tensor1);
+    const predictedValues1 = prediction1.dataSync();
+    best1 = predictedValues1[0];
+    best_index1 = 0;
+	
+	
+	
+	var dps2=[];
+var chart = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "PREDICTION FOR OPERAND 2"
+	},
+	axisY: {
+		title: "percentage for digits",
+		suffix: "%",
+		includeZero: false
+	},
+	axisX: {
+		title: "digits"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints:dps2
+	}]
+});
+	
+	
+	
+	var xVal = 0;
+var yVal = 0; 
+	
+	
+	
+	
+	
+     for (index = 0; index < predictedValues1.length; index++) {
+      if ( predictedValues1[index] > best1) { best_index1 = index; best1=predictedValues1[index];}
+      x  = Math.round(predictedValues1[index]*100);
+	  	
+		
+		dps2.push({
+			x: index,
+			y: x
+		});
+		
+		
+           
+    }   
+	chart.render();
+    console.log(best_index1);
+	
+
+result2=best_index1;
+}
+}
+function result()
+{
+var e = document.getElementById("selectfield");
+var strUser = e.options[e.selectedIndex].value;
+var result="";
+//alert(strUser);
+switch(strUser)
+{
+case '+': result=parseInt(result1)+parseInt(result2);break;
+case '-': result=parseInt(result1)-parseInt(result2);break;
+case '/':if(parseInt(result2)==0){alert("division by zero error");} 
+else result=parseInt(result1)/parseInt(result2);break;
+case '*': result=parseInt(result1)*parseInt(result2);
+	  
+
+}
+document.getElementById("result").innerHTML =result;
+//alert(result1+""+strUser+""+result2+"="+result);
+
+result="";
+}	 
+	start();
+	
+
+
+</script>
+</body>
+</html>
